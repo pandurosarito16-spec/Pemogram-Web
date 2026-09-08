@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profil Saya</title>
+
+    <style>
+        /* Mengatur tampilan dasar halaman */
+        body {
+            background-color: #E8DFD8;
+            color: black;
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            line-height: 1.6;
+        }
+
+        /* Mengatur tampilan bagian header, main, aside, dan footer */
+        header, main, aside, footer {
+            background: white;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        header { text-align: center; }
+        figure { margin: 15px 0; }
+        nav ul { list-style: none; padding: 0; display: flex; justify-content: center; gap: 15px; }
+        nav ul li a { text-decoration: none; color: #333; font-weight: bold; }
+        table { border-collapse: collapse; width: 100%; margin-top: 10px; }
+        th, td { border: 1px solid black; padding: 8px; text-align: left; }
+        th { background-color: #f2f2f2; width: 35%; }
+        .social-nav a { margin: 0 5px; display: inline-block; }
+    </style>
+</head>
+<body>
+
+    <!-- Bagian header berisi judul, foto profil, nama, dan menu navigasi -->
+    <header>
+        <h1>Profil Saya</h1>
+        
+        <figure>
+            <img src="fotoprofil.jpeg" alt="Foto Profil" width="180" height="260"><br>
+            <figcaption><i>Laurentius Pandu Rosarito</i></figcaption>
+        </figure>
+
+        <nav aria-label="Menu Utama">
+            <ul>
+                <li><a href="#data-diri">Data Diri</a></li>
+                <li><a href="#info-tambahan">Info Tambahan</a></li>
+                 <li><a href="#contact">Kontak</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Bagian main berisi seluruh informasi utama tentang profil -->
+    <main>
+
+        <!-- Section ini berisi data diri dan informasi pribadi -->
+        <section id="data-diri">
+            <h2>Bagian Data Diri</h2>
+            <article>
+                <h3>Detail Informasi Pribadi</h3>
+                <table>
+                    <tbody>
+                        <tr><th scope="row">Nama Lengkap</th><td>Laurentius Pandu Rosarito</td></tr>
+                        <tr><th scope="row">Jenis Kelamin</th><td>Laki-laki</td></tr>
+                        <tr><th scope="row">Daerah Asal</th><td>Pangkalpinang, Bangka Belitung</td></tr>
+                        <tr><th scope="row">Tanggal Lahir</th><td>16 Mei 2007</td></tr>
+                        <tr><th scope="row">Agama</th><td>Katholik</td></tr>
+                        <tr><th scope="row">Profesi</th><td>Mahasiswa</td></tr>
+                        <tr><th scope="row">Institusi Pendidikan</th><td>Universitas Sanata Dharma</td></tr>
+                        <tr><th scope="row">Program Studi</th><td>Informatika</td></tr>
+                    </tbody>
+                </table>
+            </article>
+        </section>
+
+        <!-- Section berisi hobi, minat, dan fun fact -->
+        <section id="info-tambahan">
+            <h2>Informasi Tambahan</h2>
+            <article>
+                <h3>Hobi & Minat</h3>
+                <ul>
+                    <li>Programming</li>
+                    <li>Bermain Gitar</li>
+                    <li>Bermain Game PC</li>
+                    <li>Menonton Film</li>
+                    <li>Musik</li>
+                </ul>
+            </article>
+
+            <article>
+            <h3>Fun Fact</h3>
+            <p>Tim bubur ayam diaduk</p>
+            <p>Baru bisa naik sepeda roda dua saat lulus SMA.</p>
+        </article>
+
+        </section>
+    </main>
+
+    <!-- Bagian aside berisi informasi kontak dan media sosial -->
+    <aside id="contact">
+        <h2>Contact Person</h2>
+        <p>Klik ikon di bawah ini:</p>
+        <nav aria-label="Media Sosial" class="social-nav">
+            <a href="https://wa.me/6283893177302">
+                <img src="wa.png" alt="WhatsApp" width="50" height="50">
+            </a>
+            <a href="mailto:pandurosarito@gmail.com">
+                <img src="email.png" alt="Email" width="50" height="50">
+            </a>
+            <a href="https://www.instagram.com/pnd_neu.16?igsi=ZTNlOGh3cnU3bG5t">
+                <img src="ig.png" alt="Instagram" width="50" height="50">
+            </a>
+            <a href="https://www.tiktok.com/@waterd.neu?_r=1&_t=ZS-99N8CIXPMFF">
+                <img src="tiktok.png" alt="TikTok" width="50" height="50">
+            </a>
+        </nav>
+    </aside>
+
+    <!-- Bagian footer berisi informasi hak cipta halaman -->
+    <footer>
+        <p>&copy; 2026 Laurentius Pandu Rosarito.</p>
+    </footer>
+
+</body>
+</html>
