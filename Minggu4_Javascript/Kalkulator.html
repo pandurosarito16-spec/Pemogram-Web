@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <!-- Bagian untuk mengatur informasi halaman dan menghubungkan CSS -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalkulator Tambah dan Kurang</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Bagian tampilan utama kalkulator -->
+    <div class="kalkulator">
+        <h1>Kalkulator</h1>
+        <p>Penjumlahan dan Pengurangan</p>
+
+        <!-- Bagian input bilangan -->
+        <label>Bilangan 1</label>
+        <input type="text" id="bilangan1">
+
+        <label>Bilangan 2</label>
+        <input type="text" id="bilangan2">
+
+        <!-- Bagian tombol operasi -->
+        <div class="tombol">
+            <button onclick="tambah()">Tambah</button>
+            <button onclick="kurang()">Kurang</button>
+        </div>
+
+        <!-- Bagian untuk menampilkan hasil -->
+        <label>Hasil</label>
+        <input type="text" id="hasil">
+
+    </div>
+
+    <script>
+
+        // Fungsi untuk menghitung penjumlahan
+        function tambah() {
+            var bilangan1 = Number(document.getElementById("bilangan1").value);
+            var bilangan2 = Number(document.getElementById("bilangan2").value);
+
+            var hasil = bilangan1 + bilangan2;
+
+            document.getElementById("hasil").value = hasil;
+        }
+
+        // Fungsi untuk menghitung pengurangan
+        function kurang() {
+            var bilangan1 = Number(document.getElementById("bilangan1").value);
+            var bilangan2 = Number(document.getElementById("bilangan2").value);
+
+            var hasil = bilangan1 - bilangan2;
+
+            document.getElementById("hasil").value = hasil;
+        }
+
+    </script>
+
+</body>
+</html>
