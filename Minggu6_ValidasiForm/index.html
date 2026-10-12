@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Formulir Pendaftaran Mahasiswa Baru - Universitas Sanata Dharma</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="navigasi">
+    <a href="#pendaftaran">1. Pendaftaran Akun</a>
+    <a href="#formulir">2. Formulir Mahasiswa Baru</a>
+    <a href="#komentar">3. Form Komentar</a>
+  </header>
+
+  <!-- Form Pendaftaran Akun -->
+  <section id="pendaftaran" class="kartu kecil">
+    <h2>Pendaftaran Akun</h2>
+    <form id="form-daftar">
+      <label for="username">Username</label>
+      <input type="text" id="username" class="isian" placeholder="Username"
+             required minlength="4" maxlength="20" pattern="[A-Za-z0-9_]+"
+             data-label="Username"
+             data-pola="Username hanya boleh berisi huruf, angka, dan garis bawah (_)">
+      <span class="pesan-error" id="error-username"></span>
+
+      <label for="email">Email</label>
+      <input type="email" id="email" class="isian" placeholder="Email"
+             required data-label="Email">
+      <span class="pesan-error" id="error-email"></span>
+
+      <label for="password">Password</label>
+      <input type="password" id="password" class="isian" placeholder="Password"
+             required minlength="8" data-label="Password">
+      <span class="pesan-error" id="error-password"></span>
+
+      <label for="konfirmasi">Konfirmasi Password</label>
+      <input type="password" id="konfirmasi" class="isian" placeholder="Konfirmasi Password"
+             required data-label="Konfirmasi password">
+      <span id="error-konfirmasi" class="pesan-error"></span>
+
+      <button type="submit">Daftar</button>
+      <p id="sukses-daftar" class="pesan-sukses"></p>
+    </form>
+  </section>
+
+  <section id="formulir" class="kartu">
+
+    <!-- Kop formulir -->
+    <div class="kop">
+      <div class="logo">USD</div>
+      <div class="kop-teks">
+        <h1>FORMULIR PENDAFTARAN MAHASISWA BARU<br>UNIVERSITAS SANATA DHARMA YOGYAKARTA</h1>
+        <p>Mrican, Tromol Pos 29 Yogyakarta 55002, Telp. (0274) 513301 Fax. (0274) 562383<br>
+           Homepage: http://www.usd.ac.id, E-mail: humas@usd.ac.id</p>
+      </div>
+      <div class="jalur">JALUR REGULER</div>
+    </div>
+
+
+    <form id="form-mahasiswa" novalidate>
+
+      <!--  A. DATA CALON MAHASISWA  -->
+      <h3>A. Data Calon Mahasiswa dan Orangtua/Wali</h3>
+
+      <div class="baris">
+        <label for="nama-lengkap">1. Nama Lengkap (sesuai dengan STTB/STK)</label>
+        <div class="isi">
+          <input type="text" id="nama-lengkap" class="isian" placeholder="Nama lengkap"
+                 required minlength="3" maxlength="50" pattern="[A-Za-z .,']+"
+                 data-label="Nama lengkap"
+                 data-pola="Nama lengkap hanya boleh berisi huruf dan spasi">
+          <span class="pesan-error" id="error-nama-lengkap"></span>
+        </div>
+      </div>
+
+      <div class="baris">
+        <span class="label">2. Jenis Kelamin</span>
+        <div class="isi">
+          <label class="opsi"><input type="radio" name="jenis-kelamin" value="Perempuan" required data-label="Jenis kelamin"> Perempuan</label>
+          <label class="opsi"><input type="radio" name="jenis-kelamin" value="Laki-laki"> Laki-laki</label>
+          <span class="pesan-error" id="error-jenis-kelamin"></span>
+        </div>
+      </div>
+
+      <div class="baris">
+        <span class="label">3. Status</span>
+        <div class="isi">
+          <label class="opsi"><input type="radio" name="status" value="Belum Menikah" required data-label="Status"> Belum Menikah</label>
+          <label class="opsi"><input type="radio" name="status" value="Menikah"> Menikah</label>
+          <label class="opsi"><input type="radio" name="status" value="Biarawan/Biarawati"> Biarawan/Biarawati</label>
+          <span class="pesan-error" id="error-status"></span>
+        </div>
+      </div>
+
+      <div class="baris">
+        <span class="label">4. Agama</span>
+        <div class="isi">
+          <label class="opsi"><input type="radio" name="agama" value="Islam" required data-label="Agama"> Islam</label>
+          <label class="opsi"><input type="radio" name="agama" value="Katolik"> Katolik</label>
+          <label class="opsi"><input type="radio" name="agama" value="Kristen"> Kristen</label>
+          <label class="opsi"><input type="radio" name="agama" value="Budha"> Budha</label>
+          <label class="opsi"><input type="radio" name="agama" value="Hindu"> Hindu</label>
+          <label class="opsi"><input type="radio" name="agama" value="Lain-lain"> Lain-lain</label>
+          <span class="pesan-error" id="error-agama"></span>
+        </div>
+      </div>
+
+      <div class="baris">
+        <span class="label">5. Kewarganegaraan</span>
+        <div class="isi">
+          <label class="opsi"><input type="radio" name="kewarganegaraan" value="WNI" required data-label="Kewarganegaraan"> WNI</label>
+          <label class="opsi"><input type="radio" name="kewarganegaraan" value="WNA"> WNA</label>
+          <span class="pesan-error" id="error-kewarganegaraan"></span>
+        </div>
+      </div>
+
+      <div class="baris">
+        <label for="alamat-surat">6. Alamat Surat <small>(alamat yang mudah dijangkau oleh Pos)</small></label>
+        <div class="isi">
+          <textarea id="alamat-surat" class="isian" rows="2" placeholder="Alamat surat"
+                    required minlength="10" maxlength="150" data-label="Alamat surat"></textarea>
+          <span class="pesan-error" id="error-alamat-surat"></span>
+        </div>
+      </div>
+
+      <div class="baris">
+        <label for="alamat-asal">7. Alamat Asal</label>
+        <div class="isi">
+          <input type="text" id="alamat-asal" class="isian" placeholder="Alamat asal"
+                 required minlength="5" maxlength="100" data-label="Alamat asal">
+          <span class="pesan-error" id="error-alamat-asal"></span>
+        </div>
+      </div>
+
+      <div class="baris">
+        <label for="kabupaten">&nbsp;&nbsp;&nbsp;Kabupaten/Kota</label>
+        <div class="isi">
+          <input type="text" id="kabupaten" class="isian" placeholder="Kabupaten/Kota"
+                 required minlength="3" maxlength="50" data-label="Kabupaten/Kota">
+          <span class="pesan-error" id="error-kabupaten"></span>
+        </div>
+      </div>
+
+      <div class="baris">
+        <label for="propinsi">&nbsp;&nbsp;&nbsp;Propinsi</label>
+        <div class="isi">
+          <input type="text" id="propinsi" class="isian" placeholder="Propinsi"
+                 required minlength="3" maxlength="50" data-label="Propinsi">
+          <span class="pesan-error" id="error-propinsi"></span>
+        </div>
+      </div>
+
+      <div class="baris">
+        <label for="telp-rumah">8. No. Telepon Rumah / HP</label>
+        <div class="isi dua">
+          <div>
+            <input type="tel" id="telp-rumah" class="isian" placeholder="Telepon rumah (opsional)"
+                   pattern="[0-9]{6,12}" data-label="No. telepon rumah"
+                   data-pola="No. telepon rumah harus 6-12 digit angka">
+            <span class="pesan-error" id="error-telp-rumah"></span>
+          </div>
+          <div>
+            <input type="tel" id="no-hp" class="isian" placeholder="No. HP (08xxxxxxxxxx)"
+                   required pattern="08[0-9]{8,11}" data-label="No. HP"
+                   data-pola="No. HP harus diawali 08 dan berisi 10-13 digit angka">
+            <span class="pesan-error" id="error-no-hp"></span>
+          </div>
+        </div>
+      </div>
+
+      <div class="baris">
+        <label for="email-mhs">9. Alamat E-mail</label>
+        <div class="isi">
+          <input type="email" id="email-mhs" class="isian" placeholder="contoh@email.com"
+                 required data-label="Alamat e-mail">
+          <span class="pesan-error" id="error-email-mhs"></span>
+        </div>
+      </div>
+
+      <div class="baris">
+        <label for="nama-ortu">10. Nama Orang Tua/Wali</label>
+        <div class="isi">
+          <input type="text" id="nama-ortu" class="isian" placeholder="Nama orang tua/wali"
+                 required minlength="3" maxlength="50" pattern="[A-Za-z .,']+"
+                 data-label="Nama orang tua/wali"
+                 data-pola="Nama orang tua/wali hanya boleh berisi huruf dan spasi">
+          <span class="pesan-error" id="error-nama-ortu"></span>
+        </div>
+      </div>
+
+      <div class="baris">
+        <span class="label">&nbsp;&nbsp;&nbsp;&nbsp;Tingkat Pendidikan</span>
+        <div class="isi">
+          <label class="opsi"><input type="radio" name="tingkat-pendidikan" value="Tidak lulus SD" required data-label="Tingkat pendidikan"> Tidak lulus SD</label>
+          <label class="opsi"><input type="radio" name="tingkat-pendidikan" value="SD"> SD</label>
+          <label class="opsi"><input type="radio" name="tingkat-pendidikan" value="SLTP"> SLTP</label>
+          <label class="opsi"><input type="radio" name="tingkat-pendidikan" value="SMA"> SMA</label>
+          <label class="opsi"><input type="radio" name="tingkat-pendidikan" value="Diploma"> Diploma</label>
+          <label class="opsi"><input type="radio" name="tingkat-pendidikan" value="Sarjana Muda"> Sarjana Muda</label>
+          <label class="opsi"><input type="radio" name="tingkat-pendidikan" value="Sarjana"> Sarjana</label>
+          <label class="opsi"><input type="radio" name="tingkat-pendidikan" value="Magister"> Magister</label>
+          <label class="opsi"><input type="radio" name="tingkat-pendidikan" value="Doktor"> Doktor</label>
+          <span class="pesan-error" id="error-tingkat-pendidikan"></span>
+        </div>
+      </div>
+
+      <div class="baris">
+        <span class="label">11. Untuk Mahasiswa Transfer
+          <small>(kosongkan bagian ini jika bukan mahasiswa transfer)</small></span>
+        <div class="isi"></div>
+      </div>
+
+      <div class="baris">
+        <label for="asal-pt">&nbsp;&nbsp;&nbsp;&nbsp;a. Asal Perguruan Tinggi</label>
+        <div class="isi">
+          <input type="text" id="asal-pt" class="isian" placeholder="Asal perguruan tinggi"
+                 minlength="3" maxlength="60" data-label="Asal perguruan tinggi">
+          <span class="pesan-error" id="error-asal-pt"></span>
+        </div>
+      </div>
+
+      <div class="baris">
+        <label for="asal-prodi">&nbsp;&nbsp;&nbsp;&nbsp;b. Asal Program Studi</label>
+        <div class="isi">
+          <input type="text" id="asal-prodi" class="isian" placeholder="Asal program studi"
+                 minlength="3" maxlength="60" data-label="Asal program studi">
+          <span class="pesan-error" id="error-asal-prodi"></span>
+        </div>
+      </div>
+
+      <div class="baris">
+        <span class="label">&nbsp;&nbsp;&nbsp;&nbsp;c. Status</span>
+        <div class="isi">
+          <label class="opsi"><input type="radio" name="status-transfer" id="akreditasi" value="Terakreditasi" data-label="Status perguruan tinggi asal"> Terakreditasi dengan nilai</label>
+          <input type="text" id="nilai-akreditasi" class="isian pendek" placeholder="A/B/C"
+                 maxlength="1" pattern="[A-Ca-c]" disabled data-label="Nilai akreditasi"
+                 data-pola="Nilai akreditasi harus A, B, atau C">
+          <label class="opsi"><input type="radio" name="status-transfer" value="Belum Terakreditasi"> Belum Terakreditasi</label>
+          <span class="pesan-error" id="error-nilai-akreditasi"></span>
+          <span class="pesan-error" id="error-status-transfer"></span>
+        </div>
+      </div>
+
+      <!-- B. PROGRAM STUDI  -->
+      <h3>B. Program Studi Yang Dipilih</h3>
+      <div class="tabel-geser">
+        <table class="tabel">
+          <thead>
+            <tr>
+              <th>Fakultas</th><th>Program Studi</th><th>Jenjang</th>
+              <th>Pilihan I</th><th>Pilihan II</th><th>Pilihan III</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Keguruan dan Ilmu Pendidikan</td>
+              <td>Pendidikan Guru Sekolah Dasar</td>
+              <td class="tengah">S1</td>
+              <td class="tengah"><input type="checkbox" name="pilihan1" value="Pendidikan Guru Sekolah Dasar" aria-label="Pendidikan Guru Sekolah Dasar sebagai pilihan I"></td>
+              <td class="tengah"><input type="checkbox" name="pilihan2" value="Pendidikan Guru Sekolah Dasar" aria-label="Pendidikan Guru Sekolah Dasar sebagai pilihan II"></td>
+              <td class="tengah"><input type="checkbox" name="pilihan3" value="Pendidikan Guru Sekolah Dasar" aria-label="Pendidikan Guru Sekolah Dasar sebagai pilihan III"></td>
+            </tr>
+            <tr>
+              <td>Keguruan dan Ilmu Pendidikan</td>
+              <td>Pendidikan Bahasa Inggris</td>
+              <td class="tengah">S1</td>
+              <td class="tengah"><input type="checkbox" name="pilihan1" value="Pendidikan Bahasa Inggris" aria-label="Pendidikan Bahasa Inggris sebagai pilihan I"></td>
+              <td class="tengah"><input type="checkbox" name="pilihan2" value="Pendidikan Bahasa Inggris" aria-label="Pendidikan Bahasa Inggris sebagai pilihan II"></td>
+              <td class="tengah"><input type="checkbox" name="pilihan3" value="Pendidikan Bahasa Inggris" aria-label="Pendidikan Bahasa Inggris sebagai pilihan III"></td>
+            </tr>
+            <tr>
+              <td>Ekonomi</td>
+              <td>Manajemen</td>
+              <td class="tengah">S1</td>
+              <td class="tengah"><input type="checkbox" name="pilihan1" value="Manajemen" aria-label="Manajemen sebagai pilihan I"></td>
+              <td class="tengah"><input type="checkbox" name="pilihan2" value="Manajemen" aria-label="Manajemen sebagai pilihan II"></td>
+              <td class="tengah"><input type="checkbox" name="pilihan3" value="Manajemen" aria-label="Manajemen sebagai pilihan III"></td>
+            </tr>
+            <tr>
+              <td>Ekonomi</td>
+              <td>Akuntansi</td>
+              <td class="tengah">S1</td>
+              <td class="tengah"><input type="checkbox" name="pilihan1" value="Akuntansi" aria-label="Akuntansi sebagai pilihan I"></td>
+              <td class="tengah"><input type="checkbox" name="pilihan2" value="Akuntansi" aria-label="Akuntansi sebagai pilihan II"></td>
+              <td class="tengah"><input type="checkbox" name="pilihan3" value="Akuntansi" aria-label="Akuntansi sebagai pilihan III"></td>
+            </tr>
+            <tr>
+              <td>Sains dan Teknologi</td>
+              <td>Informatika</td>
+              <td class="tengah">S1</td>
+              <td class="tengah"><input type="checkbox" name="pilihan1" value="Informatika" aria-label="Informatika sebagai pilihan I"></td>
+              <td class="tengah"><input type="checkbox" name="pilihan2" value="Informatika" aria-label="Informatika sebagai pilihan II"></td>
+              <td class="tengah"><input type="checkbox" name="pilihan3" value="Informatika" aria-label="Informatika sebagai pilihan III"></td>
+            </tr>
+            <tr>
+              <td>Sains dan Teknologi</td>
+              <td>Teknik Mesin</td>
+              <td class="tengah">S1</td>
+              <td class="tengah"><input type="checkbox" name="pilihan1" value="Teknik Mesin" aria-label="Teknik Mesin sebagai pilihan I"></td>
+              <td class="tengah"><input type="checkbox" name="pilihan2" value="Teknik Mesin" aria-label="Teknik Mesin sebagai pilihan II"></td>
+              <td class="tengah"><input type="checkbox" name="pilihan3" value="Teknik Mesin" aria-label="Teknik Mesin sebagai pilihan III"></td>
+            </tr>
+            <tr>
+              <td>Sains dan Teknologi</td>
+              <td>Teknik Elektro</td>
+              <td class="tengah">S1</td>
+              <td class="tengah"><input type="checkbox" name="pilihan1" value="Teknik Elektro" aria-label="Teknik Elektro sebagai pilihan I"></td>
+              <td class="tengah"><input type="checkbox" name="pilihan2" value="Teknik Elektro" aria-label="Teknik Elektro sebagai pilihan II"></td>
+              <td class="tengah"><input type="checkbox" name="pilihan3" value="Teknik Elektro" aria-label="Teknik Elektro sebagai pilihan III"></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <span class="pesan-error" id="error-prodi"></span>
+
+      <!--  C. DATA SEKOLAH  -->
+      <h3>C. Data SMA/SMK/SMF/MAN</h3>
+
+      <div class="baris">
+        <label for="nama-sekolah">1. Nama Sekolah Menengah</label>
+        <div class="isi">
+          <input type="text" id="nama-sekolah" class="isian" placeholder="Nama sekolah"
+                 required minlength="3" maxlength="60" data-label="Nama sekolah">
+          <span class="pesan-error" id="error-nama-sekolah"></span>
+        </div>
+      </div>
+
+      <div class="baris">
+        <label for="telp-sekolah">2. Telepon</label>
+        <div class="isi">
+          <input type="tel" id="telp-sekolah" class="isian" placeholder="Telepon sekolah (opsional)"
+                 pattern="[0-9]{6,12}" data-label="Telepon sekolah"
+                 data-pola="Telepon sekolah harus 6-12 digit angka">
+          <span class="pesan-error" id="error-telp-sekolah"></span>
+        </div>
+      </div>
+
+      <div class="baris">
+        <label for="alamat-sekolah">3. Alamat Sekolah</label>
+        <div class="isi">
+          <input type="text" id="alamat-sekolah" class="isian" placeholder="Alamat sekolah"
+                 required minlength="5" maxlength="100" data-label="Alamat sekolah">
+          <span class="pesan-error" id="error-alamat-sekolah"></span>
+        </div>
+      </div>
+
+      <div class="baris">
+        <label for="kab-sekolah">&nbsp;&nbsp;&nbsp;Kabupaten/Kota</label>
+        <div class="isi">
+          <input type="text" id="kab-sekolah" class="isian" placeholder="Kabupaten/Kota"
+                 required minlength="3" maxlength="50" data-label="Kabupaten/Kota sekolah">
+          <span class="pesan-error" id="error-kab-sekolah"></span>
+        </div>
+      </div>
+
+      <div class="baris">
+        <label for="prop-sekolah">&nbsp;&nbsp;&nbsp;Propinsi</label>
+        <div class="isi">
+          <input type="text" id="prop-sekolah" class="isian" placeholder="Propinsi"
+                 required minlength="3" maxlength="50" data-label="Propinsi sekolah">
+          <span class="pesan-error" id="error-prop-sekolah"></span>
+        </div>
+      </div>
+
+      <div class="baris">
+        <label for="sttb-tahun">4. Bagi Yang Sudah Lulus/Memiliki Ijazah &mdash; STTB Tahun</label>
+        <div class="isi">
+          <input type="number" id="sttb-tahun" class="isian pendek" placeholder="Tahun"
+                 min="1990" data-label="Tahun STTB">
+          <span class="pesan-error" id="error-sttb-tahun"></span>
+        </div>
+      </div>
+
+      <div class="baris">
+        <span class="label">5. Data NEM/STK/SKHUN</span>
+        <div class="isi"></div>
+      </div>
+
+      <div class="baris">
+        <label for="nem-tahun">&nbsp;&nbsp;&nbsp;&nbsp;a. Tahun</label>
+        <div class="isi">
+          <input type="number" id="nem-tahun" class="isian pendek" placeholder="Tahun"
+                 required min="1990" data-label="Tahun NEM">
+          <span class="pesan-error" id="error-nem-tahun"></span>
+        </div>
+      </div>
+
+      <div class="baris">
+        <label for="jumlah-nilai">&nbsp;&nbsp;&nbsp;&nbsp;b. Jumlah Nilai</label>
+        <div class="isi">
+          <input type="number" id="jumlah-nilai" class="isian pendek" placeholder="Jumlah nilai"
+                 required min="0" max="150" step="0.01" data-label="Jumlah nilai">
+          <span class="pesan-error" id="error-jumlah-nilai"></span>
+        </div>
+      </div>
+
+      <div class="baris">
+        <label for="jumlah-mapel">&nbsp;&nbsp;&nbsp;&nbsp;c. Jumlah Mata Pelajaran</label>
+        <div class="isi">
+          <input type="number" id="jumlah-mapel" class="isian pendek" placeholder="Jumlah"
+                 required min="1" max="15" data-label="Jumlah mata pelajaran">
+          <span class="pesan-error" id="error-jumlah-mapel"></span>
+        </div>
+      </div>
+
+      <p class="judul-kecil">6. Jurusan:</p>
+      <div class="dua-tabel">
+        <table class="tabel">
+          <thead><tr><th>Jurusan</th><th>Negeri</th><th>Swasta</th></tr></thead>
+          <tbody>
+            <tr><td>SMA IPA</td>
+              <td class="tengah"><input type="radio" name="jurusan-sma" value="SMA IPA - Negeri" required data-label="Jurusan sekolah" aria-label="SMA IPA Negeri"></td>
+              <td class="tengah"><input type="radio" name="jurusan-sma" value="SMA IPA - Swasta" aria-label="SMA IPA Swasta"></td></tr>
+            <tr><td>SMA IPS</td>
+              <td class="tengah"><input type="radio" name="jurusan-sma" value="SMA IPS - Negeri" aria-label="SMA IPS Negeri"></td>
+              <td class="tengah"><input type="radio" name="jurusan-sma" value="SMA IPS - Swasta" aria-label="SMA IPS Swasta"></td></tr>
+            <tr><td>SMA Bahasa</td>
+              <td class="tengah"><input type="radio" name="jurusan-sma" value="SMA Bahasa - Negeri" aria-label="SMA Bahasa Negeri"></td>
+              <td class="tengah"><input type="radio" name="jurusan-sma" value="SMA Bahasa - Swasta" aria-label="SMA Bahasa Swasta"></td></tr>
+            <tr><td>SMK Ekonomi</td>
+              <td class="tengah"><input type="radio" name="jurusan-sma" value="SMK Ekonomi - Negeri" aria-label="SMK Ekonomi Negeri"></td>
+              <td class="tengah"><input type="radio" name="jurusan-sma" value="SMK Ekonomi - Swasta" aria-label="SMK Ekonomi Swasta"></td></tr>
+          </tbody>
+        </table>
+        <table class="tabel">
+          <thead><tr><th>Jurusan</th><th>Negeri</th><th>Swasta</th></tr></thead>
+          <tbody>
+            <tr><td>SMK Teknik</td>
+              <td class="tengah"><input type="radio" name="jurusan-sma" value="SMK Teknik - Negeri" aria-label="SMK Teknik Negeri"></td>
+              <td class="tengah"><input type="radio" name="jurusan-sma" value="SMK Teknik - Swasta" aria-label="SMK Teknik Swasta"></td></tr>
+            <tr><td>SMK Ketrampilan</td>
+              <td class="tengah"><input type="radio" name="jurusan-sma" value="SMK Ketrampilan - Negeri" aria-label="SMK Ketrampilan Negeri"></td>
+              <td class="tengah"><input type="radio" name="jurusan-sma" value="SMK Ketrampilan - Swasta" aria-label="SMK Ketrampilan Swasta"></td></tr>
+            <tr><td>SMF</td>
+              <td class="tengah"><input type="radio" name="jurusan-sma" value="SMF - Negeri" aria-label="SMF Negeri"></td>
+              <td class="tengah"><input type="radio" name="jurusan-sma" value="SMF - Swasta" aria-label="SMF Swasta"></td></tr>
+            <tr><td>Lain-lain</td>
+              <td class="tengah"><input type="radio" name="jurusan-sma" value="Lain-lain - Negeri" aria-label="Lain-lain Negeri"></td>
+              <td class="tengah"><input type="radio" name="jurusan-sma" value="Lain-lain - Swasta" aria-label="Lain-lain Swasta"></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <span class="pesan-error" id="error-jurusan-sma"></span>
+
+      <!--  D. KERINGANAN DPP  -->
+      <h3>D. Permohonan Keringanan DPP</h3>
+
+      <label class="opsi blok"><input type="radio" name="dpp" id="dpp-ajukan" value="Mengajukan" required data-label="Pilihan permohonan keringanan DPP">
+        Saya mengajukan permohonan keringanan DPP (Dana Pengembangan Pendidikan). Kelengkapan Dokumen yang saya sertakan:</label>
+
+      <div class="dokumen">
+        <label class="opsi"><input type="checkbox" id="dok-a" class="cek" disabled
+               data-pesan="Dokumen a wajib disertakan"> a. Daftar Gaji Ayah dan Ibu atau Surat Keterangan Penghasilan Ayah dan Ibu yang disahkan Ketua RT</label>
+        <span class="pesan-error" id="error-dok-a"></span>
+        <label class="opsi"><input type="checkbox" id="dok-b" class="cek" disabled
+               data-pesan="Dokumen b wajib disertakan"> b. Bukti Rekening Listrik dan Telepon</label>
+        <span class="pesan-error" id="error-dok-b"></span>
+        <label class="opsi"><input type="checkbox" id="dok-c" class="cek" disabled
+               data-pesan="Dokumen c wajib disertakan"> c. Surat Keterangan Tidak Mampu dari Ketua RT</label>
+        <span class="pesan-error" id="error-dok-c"></span>
+      </div>
+
+      <label class="opsi blok"><input type="radio" name="dpp" value="Tidak mengajukan"> Saya tidak mengajukan permohonan keringanan DPP</label>
+      <span class="pesan-error" id="error-dpp"></span>
+
+      <!-- ---------------- E. BEASISWA ---------------- -->
+      <h3>E. Partisipasi Program Beasiswa Universitas Sanata Dharma</h3>
+
+      <label class="opsi blok"><input type="radio" name="beasiswa" id="beasiswa-ya" value="Menyumbang" required data-label="Pilihan partisipasi beasiswa">
+        Saya akan menyumbang dana ke USD untuk beasiswa sebesar Rp
+        <input type="number" id="nominal-beasiswa" class="isian sedang" placeholder="Nominal"
+               min="1000" disabled data-label="Nominal beasiswa"></label>
+      <span class="pesan-error" id="error-nominal-beasiswa"></span>
+
+      <label class="opsi blok"><input type="radio" name="beasiswa" value="Tidak menyumbang"> Saya tidak akan menyumbang dana ke USD untuk beasiswa</label>
+      <span class="pesan-error" id="error-beasiswa"></span>
+
+      <!-- F. PERNYATAAN  -->
+      <div class="pernyataan">
+        <p><em><strong>Pernyataan:</strong><br>
+        Saya menyatakan dengan sesungguhnya bahwa data yang saya isikan dalam formulir ini adalah benar.</em></p>
+
+        <label class="opsi"><input type="checkbox" id="pernyataan" class="cek" required
+               data-pesan="Pernyataan harus disetujui sebelum formulir dikirim"> Saya setuju dengan pernyataan di atas</label>
+        <span class="pesan-error" id="error-pernyataan"></span>
+
+        <div class="ttd">
+          <label for="tanda-tangan">Calon Mahasiswa (ketik nama lengkap sebagai tanda tangan)</label>
+          <input type="text" id="tanda-tangan" class="isian" placeholder="Nama lengkap"
+                 required data-label="Tanda tangan">
+          <span class="pesan-error" id="error-tanda-tangan"></span>
+        </div>
+      </div>
+
+      <div class="tombol">
+        <button type="submit">Kirim Formulir</button>
+        <button type="reset" id="tombol-reset" class="sekunder">Reset</button>
+      </div>
+      <p id="ringkasan-error" class="pesan-error"></p>
+      <p id="sukses-mhs" class="pesan-sukses"></p>
+    </form>
+  </section>
+
+  
+  <section id="komentar" class="kartu kecil">
+    <h2>Komentar</h2>
+    <form id="form-komentar">
+      <input type="text" id="input-nama" class="isian" placeholder="Nama Anda"
+             required minlength="3" maxlength="30" data-label="Nama">
+      <span class="pesan-error" id="error-input-nama"></span>
+
+      <textarea id="input-pesan" class="isian" placeholder="Tulis komentar..."
+                required minlength="5" maxlength="200" data-label="Komentar"></textarea>
+      <span class="pesan-error" id="error-input-pesan"></span>
+
+      <button type="submit">Kirim Komentar</button>
+    </form>
+    <ul id="daftar-komentar"></ul>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
