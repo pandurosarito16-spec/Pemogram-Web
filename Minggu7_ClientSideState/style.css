@@ -1,0 +1,665 @@
+/* Mengatur tampilan dasar halaman */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f5f7fa;
+    color: #333;
+}
+
+
+/* Mengatur header menggunakan Flexbox */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+
+    padding: 16px 5%;
+
+    background-color: #1f4e78;
+    color: white;
+
+    gap: 20px;
+}
+
+header h1 {
+    font-size: 36px;
+}
+
+
+/* Mengatur foto profil */
+header figure {
+    margin: 0;
+    text-align: center;
+}
+
+header figure img {
+    width: 180px;
+    height: 260px;
+
+    object-fit: cover;
+
+    border-radius: 8px;
+    border: 3px solid white;
+}
+
+header figcaption {
+    margin-top: 5px;
+}
+
+
+/* Mengatur menu navigasi */
+header nav ul {
+    display: flex;
+    gap: 16px;
+
+    list-style: none;
+}
+
+header nav a {
+    color: white;
+    text-decoration: none;
+}
+
+header nav a:hover {
+    text-decoration: underline;
+}
+
+
+/* Mengatur isi utama secara vertikal */
+main {
+    display: flex;
+    flex-direction: column;
+
+    gap: 30px;
+
+    width: 100%;
+
+    padding: 40px 5%;
+}
+
+
+/* Mengatur lebar section */
+main > section {
+    width: 100%;
+    max-width: 1200px;
+
+    margin: 0 auto;
+}
+
+main > section > h2,
+aside > h2 {
+    margin-bottom: 20px;
+
+    color: #1f4e78;
+}
+
+
+/* Mengatur tampilan data diri */
+.datadiri article {
+    width: 100%;
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 24px;
+}
+
+.datadiri article h3 {
+    margin-bottom: 20px;
+    color: #1f4e78;
+}
+
+
+/* Membuat tabel dapat digeser pada layar kecil */
+.table-container {
+    width: 100%;
+    overflow-x: auto;
+}
+
+.datadiri table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.datadiri th,
+.datadiri td {
+    border: 1px solid #ddd;
+    padding: 12px 15px;
+    text-align: left;
+}
+
+.datadiri th {
+    width: 30%;
+    background-color: #f2f2f2;
+}
+
+
+/* Mengatur artikel menggunakan CSS Grid */
+.daftar-artikel {
+    display: grid;
+
+    grid-template-columns: 1fr;
+
+    gap: 20px;
+
+    width: 100%;
+    max-width: 1200px;
+
+    margin: 0 auto;
+}
+
+
+/* Mengatur posisi judul section */
+.daftar-artikel > h2 {
+    grid-column: 1 / -1;
+
+    margin-bottom: 0;
+}
+
+
+/* Mengatur tampilan setiap artikel */
+.daftar-artikel article {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+
+    padding: 24px;
+
+    background-color: white;
+}
+
+.daftar-artikel article h3 {
+    margin-bottom: 15px;
+
+    color: #1f4e78;
+}
+
+.daftar-artikel ul,
+.daftar-artikel ol {
+    padding-left: 20px;
+}
+
+.daftar-artikel li {
+    margin-bottom: 5px;
+}
+
+
+/* Mengatur tampilan contact */
+aside {
+    width: 100%;
+    max-width: 1200px;
+
+    margin: 0 auto;
+
+    background-color: #f2f2f2;
+
+    padding: 24px;
+
+    border-radius: 8px;
+}
+
+aside h2 {
+    font-size: 28px;
+}
+
+
+/* Mengatur ikon media sosial */
+.social-nav {
+    display: flex;
+
+    gap: 15px;
+
+    flex-wrap: wrap;
+}
+
+.social-nav img {
+    width: 50px;
+    height: 50px;
+
+    object-fit: contain;
+}
+
+.social-nav img:hover {
+    transform: scale(1.1);
+}
+
+
+/* Mengatur footer */
+footer {
+    width: 100%;
+
+    padding: 20px;
+
+    background-color: #1f4e78;
+
+    color: white;
+
+    text-align: center;
+}
+
+footer p {
+    margin: 0;
+}
+
+
+/* Mengubah Grid menjadi 2 kolom */
+@media (min-width: 768px) {
+
+    .daftar-artikel {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+
+/* Mengubah Grid menjadi 3 kolom */
+@media (min-width: 992px) {
+
+    .daftar-artikel {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+}
+
+
+/* Mengatur tampilan pada layar kecil */
+@media (max-width: 767px) {
+
+    header {
+        flex-direction: column;
+
+        justify-content: center;
+
+        text-align: center;
+
+        padding: 25px 20px;
+    }
+
+    header h1 {
+        font-size: 30px;
+    }
+
+    header nav ul {
+        flex-direction: column;
+
+        align-items: center;
+
+        gap: 10px;
+    }
+
+    header figure img {
+        width: 150px;
+        height: 215px;
+    }
+
+    main {
+        padding: 30px 20px;
+    }
+
+.datadiri article,
+.daftar-artikel article,
+aside {
+    padding: 20px;
+}
+
+.datadiri table {
+    font-size: 14px;
+}
+
+.datadiri th,
+.datadiri td {
+    padding: 10px;
+}
+
+}
+
+/* Mengatur tombol di dalam header */
+.tombol-header {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+header button,
+#btn-tambah {
+    padding: 8px 16px;
+
+    border: none;
+    border-radius: 6px;
+
+    background-color: #ffffff;
+    color: #1f4e78;
+
+    font-weight: bold;
+    cursor: pointer;
+}
+
+header button:hover {
+    background-color: #dbe7f3;
+}
+
+#btn-tambah {
+    margin-bottom: 20px;
+
+    background-color: #1f4e78;
+    color: white;
+}
+
+#btn-tambah:hover {
+    background-color: #163a59;
+}
+
+
+/* Menyembunyikan elemen di tombol Info Tambahan */
+.tersembunyi {
+    display: none;
+}
+
+
+/* Mengatur portofolio menggunakan CSS Grid */
+.daftar-portofolio {
+    display: grid;
+
+    grid-template-columns: 1fr;
+
+    gap: 20px;
+}
+
+.daftar-portofolio article {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+
+    padding: 24px;
+
+    background-color: white;
+}
+
+.daftar-portofolio article h3 {
+    margin-bottom: 5px;
+
+    color: #1f4e78;
+}
+
+.daftar-portofolio time {
+    display: block;
+
+    margin-bottom: 10px;
+
+    font-size: 14px;
+    color: gray;
+}
+
+.daftar-portofolio article button {
+    margin-top: 15px;
+    padding: 6px 14px;
+
+    border: none;
+    border-radius: 6px;
+
+    background-color: #dc3545;
+    color: white;
+
+    cursor: pointer;
+}
+
+.daftar-portofolio article button:hover {
+    background-color: #b02a37;
+}
+
+@media (min-width: 768px) {
+
+    .daftar-portofolio {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+@media (min-width: 992px) {
+
+    .daftar-portofolio {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+}
+
+
+/* Mode gelap */
+body.dark-mode {
+    background-color: #1a1a1a;
+    color: #f2f2f2;
+}
+
+body.dark-mode main > section > h2,
+body.dark-mode aside > h2,
+body.dark-mode article h3 {
+    color: #8ab4f8;
+}
+
+body.dark-mode .datadiri article,
+body.dark-mode .daftar-artikel article,
+body.dark-mode .daftar-portofolio article {
+    background-color: #2a2a2a;
+    border-color: #444;
+}
+
+body.dark-mode .datadiri th,
+body.dark-mode .datadiri td {
+    border-color: #444;
+}
+
+body.dark-mode .datadiri th {
+    background-color: #333;
+}
+
+body.dark-mode aside {
+    background-color: #2a2a2a;
+}
+
+body.dark-mode #btn-tambah {
+    background-color: #8ab4f8;
+    color: #1a1a1a;
+}
+
+/* Efek hover pada item portofolio */
+.daftar-portofolio article.artikel-hover {
+    background-color: #eef4fb;
+}
+
+body.dark-mode .daftar-portofolio article.artikel-hover {
+    background-color: #3a3a3a;
+}
+
+
+/* Tombol Like berwarna biru */
+.daftar-portofolio article button.tombol-like {
+    margin-right: 8px;
+
+    background-color: #1f4e78;
+}
+
+.daftar-portofolio article button.tombol-like:hover {
+    background-color: #163a59;
+}
+
+
+/* Mengatur form komentar */
+#form-komentar {
+    display: flex;
+    flex-direction: column;
+
+    gap: 12px;
+
+    margin-bottom: 20px;
+
+    padding: 24px;
+
+    border: 1px solid #ddd;
+    border-radius: 8px;
+
+    background-color: white;
+}
+
+#form-komentar input,
+#form-komentar textarea {
+    width: 100%;
+
+    padding: 10px;
+
+    border: 1px solid #ccc;
+    border-radius: 6px;
+
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+}
+
+#form-komentar textarea {
+    min-height: 100px;
+
+    resize: vertical;
+}
+
+#form-komentar button,
+#btn-hapus-semua {
+    align-self: flex-start;
+
+    padding: 8px 16px;
+
+    border: none;
+    border-radius: 6px;
+
+    background-color: #1f4e78;
+    color: white;
+
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#form-komentar button:hover {
+    background-color: #163a59;
+}
+
+#btn-hapus-semua {
+    margin-bottom: 20px;
+
+    background-color: #dc3545;
+}
+
+#btn-hapus-semua:hover {
+    background-color: #b02a37;
+}
+
+
+/* Pesan error validasi */
+#pesan-error {
+    color: #dc3545;
+
+    font-size: 14px;
+}
+
+
+/* Daftar komentar */
+#daftar-komentar {
+    list-style: none;
+}
+
+#daftar-komentar li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    gap: 15px;
+
+    margin-bottom: 10px;
+
+    padding: 12px 16px;
+
+    border: 1px solid #ddd;
+    border-radius: 8px;
+
+    background-color: white;
+}
+
+#daftar-komentar li button {
+    padding: 4px 12px;
+
+    border: none;
+    border-radius: 6px;
+
+    background-color: #dc3545;
+    color: white;
+
+    cursor: pointer;
+}
+
+#daftar-komentar li button:hover {
+    background-color: #b02a37;
+}
+
+
+/* Tombol kembali ke atas */
+#btn-atas {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+
+    padding: 10px 16px;
+
+    border: none;
+    border-radius: 6px;
+
+    background-color: #1f4e78;
+    color: white;
+
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#btn-atas:hover {
+    background-color: #163a59;
+}
+
+
+/* Mode gelap untuk komentar */
+body.dark-mode #form-komentar,
+body.dark-mode #daftar-komentar li {
+    background-color: #2a2a2a;
+    border-color: #444;
+}
+
+body.dark-mode #form-komentar input,
+body.dark-mode #form-komentar textarea {
+    background-color: #1a1a1a;
+    color: #f2f2f2;
+    border-color: #555;
+}
+
+body.dark-mode #btn-atas,
+body.dark-mode #form-komentar button {
+    background-color: #8ab4f8;
+    color: #1a1a1a;
+}
+
+/* Tombol reset data di footer */
+#btn-reset {
+    margin-top: 10px;
+
+    padding: 8px 16px;
+
+    border: none;
+    border-radius: 6px;
+
+    background-color: #dc3545;
+    color: white;
+
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#btn-reset:hover {
+    background-color: #b02a37;
+}
